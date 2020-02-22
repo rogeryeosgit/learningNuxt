@@ -35,3 +35,4 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 - "~" refers to project root folder
 - If components are in default layout then it appears everywhere
 - style "scoped" only affects page where style appears
+- Can include assets in assets folder or static folder, but take note of pathing ~assets vs /images
