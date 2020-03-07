@@ -36,3 +36,7 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 - If components are in default layout then it appears everywhere
 - style "scoped" only affects page where style appears
 - Can include assets in assets folder or static folder, but take note of pathing ~assets vs /images
+- If camalCase can use is"-"case e.g. isAdmin can bind using is-admin
+- In asyncData, this is not available. Use params instead in the "context" variable
+- Project still uses old AsyncData and promises, remember to use Async Await. Check out https://nuxtjs.org/guide/async-data/
+- So lost in Vuex :( should have studied it before going on to nuxt.

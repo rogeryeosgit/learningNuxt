@@ -3,35 +3,21 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-    <section class="featured-posts">
-      <PostPreview
-        id="1"
-        thumbnail="images/techimage.jpg"
-        title="Hey There!"
-        previewText="This is my fist post"
-      />
-      <PostPreview
-        id="2"
-        thumbnail="images/techimage.jpg"
-        title="Hey There!"
-        previewText="This is my second post"
-      />
-      <PostPreview
-        id="3"
-        thumbnail="images/techimage.jpg"
-        title="Hey There!"
-        previewText="This is my third post"
-      />
-    </section>
+    <PostList :posts="loadedPosts" />
   </div>
 </template>
 
 <script>
-import PostPreview from "@/components/Posts/PostPreview";
+import PostList from "@/components/Posts/PostList";
 
 export default {
   components: {
-    PostPreview
+    PostList
+  },
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts
+    }
   }
 };
 </script>
@@ -42,7 +28,7 @@ export default {
   position: relative;
   padding: 30px;
   box-sizing: border-box;
-  background-image: url('~assets/images/main-page-background.jpg');
+  background-image: url("~assets/images/main-page-background.jpg");
   background-position: center;
   background-size: cover;
 }
