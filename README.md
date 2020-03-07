@@ -37,6 +37,7 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 - style "scoped" only affects page where style appears
 - Can include assets in assets folder or static folder, but take note of pathing ~assets vs /images
 - If camalCase can use is"-"case e.g. isAdmin can bind using is-admin
-- In asyncData, this is not available. Use params instead in the "context" variable
+- In asyncData, "this" is not available. Use params instead in the "context" variable
 - Project still uses old AsyncData and promises, remember to use Async Await. Check out https://nuxtjs.org/guide/async-data/
 - So lost in Vuex :( should have studied it before going on to nuxt.
+- asyncData and fetch are only in pages components. Not in layouts or other components. Fetch just puts it in the store. asyncData merges data.
