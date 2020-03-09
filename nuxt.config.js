@@ -62,5 +62,8 @@ export default {
   transition: {
     name: 'fade',
     mode: 'out-in'
+  },
+  env: {
+    fbAPIKey: 'AIzaSyBa6rKAg94DKIlGWhuJdcq1rUCtQq5OgVM'
   }
 }
