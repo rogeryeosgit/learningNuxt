@@ -41,3 +41,4 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 - Project still uses old AsyncData and promises, remember to use Async Await. Check out https://nuxtjs.org/guide/async-data/
 - So lost in Vuex :( should have studied it before going on to nuxt.
 - asyncData and fetch are only in pages components. Not in layouts or other components. Fetch just puts it in the store. asyncData merges data.
+- Check out modules here https://github.com/nuxt-community/awesome-nuxt#modules

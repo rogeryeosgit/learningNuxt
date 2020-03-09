@@ -18,17 +18,21 @@ export default {
   },
   /*
   ** Customize the progress-bar color
+  ** Can also use loadingindicator -> Make circle appear for SPA
   */
   loading: { color: '#fff' },
   /*
   ** Global CSS
   */
   css: [
+    '~assets/styles/main.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~plugins/core-components.js',
+    '~plugins/date-filter.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -36,10 +40,15 @@ export default {
   buildModules: [
   ],
   /*
-  ** Nuxt.js modules
+  ** Nuxt.js modules for convenience
   */
   modules: [
+    '@nuxtjs/axios'
   ],
+  axios: {
+    baseURL: process.env.BASE_URL || 'https://nuxt-blog-2e3cc.firebaseio.com',
+    credentials: false
+  },
   /*
   ** Build configuration
   */
@@ -49,5 +58,9 @@ export default {
     */
     extend (config, ctx) {
     }
+  },
+  transition: {
+    name: 'fade',
+    mode: 'out-in'
   }
 }

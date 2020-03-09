@@ -1,5 +1,4 @@
 import Vuex from 'vuex'
-import axios from 'axios'
 
 const createStore = () => {
     return new Vuex.Store({
@@ -20,11 +19,11 @@ const createStore = () => {
         },
         actions: {
             nuxtServerInit(vuexContext, context) {
-                return axios.get('https://nuxt-blog-2e3cc.firebaseio.com/posts.json')
-                    .then(res => {
+                return context.app.$axios.$get('/posts.json') //because on server side and not this.$axios
+                    .then(data => {
                         const postsArray = []
-                        for (const key in res.data) {
-                            postsArray.push({ ...res.data[key], id: key })
+                        for (const key in data) {
+                            postsArray.push({ ...data[key], id: key })
                         }
                         vuexContext.commit('setPosts', postsArray)
                     }).catch(e => context.error(e))
@@ -34,18 +33,18 @@ const createStore = () => {
                     ...post,
                     updatedDate: new Date()
                 }
-                return axios
-                    .post("https://nuxt-blog-2e3cc.firebaseio.com/posts.json",
+                return this.$axios
+                    .$post("/posts.json",
                         createdPost)
-                    .then(result => {
-                        vuexContext.commit('addPost', { ...createdPost, id: result.data.name })
+                    .then(data => {
+                        vuexContext.commit('addPost', { ...createdPost, id: data.name })
                     })
                     .catch(e => console.log(e));
             },
             editPost(vuexContext, editedPost) {
-                return axios
-                    .put(
-                        "https://nuxt-blog-2e3cc.firebaseio.com/posts/" +
+                return this.$axios
+                    .$put(
+                        "/posts/" +
                         editedPost.id +
                         ".json",
                         editedPost
