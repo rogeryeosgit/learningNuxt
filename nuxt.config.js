@@ -1,3 +1,5 @@
+const bodyParser = require('body-parser')
+
 
 export default {
   mode: 'universal',
@@ -65,5 +67,9 @@ export default {
   },
   env: {
     fbAPIKey: 'AIzaSyBa6rKAg94DKIlGWhuJdcq1rUCtQq5OgVM'
-  }
+  },
+  serverMiddleware: [
+    bodyParser.json(),
+    '~/api'
+  ]
 }

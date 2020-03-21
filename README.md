@@ -42,3 +42,4 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 - So lost in Vuex :( should have studied it before going on to nuxt.
 - asyncData and fetch are only in pages components. Not in layouts or other components. Fetch just puts it in the store. asyncData merges data.
 - Check out modules here [https://github.com/nuxt-community/awesome-nuxt#modules]
+- nuxt focuses primarily on SPA and SSR to the front end, but we can also add server side stuff via "serverMiddleware" in the nuxt.config.js file
